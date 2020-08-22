@@ -1,0 +1,460 @@
+* {
+      box-sizing: border-box;
+}
+
+html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100vh;
+}
+
+body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100vh;
+      font-family: Poppins;
+      font-weight: 400;
+      background: white;
+      background-position: center;
+      background-size: cover;
+}
+
+::-webkit-scrollbar {
+      width: 12px;
+}
+  
+::-webkit-scrollbar-thumb {
+      background: linear-gradient(#ffffff,rgb(0, 0, 0));
+      border-radius: 6px;
+}
+
+.animintro {
+      width: 100%;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #161616;
+      animation: slide-out-container 4s cubic-bezier(0.97, 0.01, 0.36, 0.92) 2.8s;
+      animation-fill-mode: forwards;
+}
+  
+.text-wrapper {
+      color: #ffffff;
+      position: absolute;
+}
+  
+.text {
+      font-family: "Montserrat";
+      font-weight: 600;
+      letter-spacing: 7px;
+      text-transform: uppercase;
+      font-size: 50px;
+}
+  
+@keyframes blink {
+      0% {
+          opacity: 0;
+      }
+      1% {
+          opacity: 100%;
+      }
+      99% {
+          opacity: 100%;
+      }
+      100% {
+          opacity: 0;
+      }
+}
+  
+.text-1, .text-3, .text-4, .text-8, .text-9, .text-11 {
+      color: #000000;
+      -webkit-text-stroke: 1px white;
+}
+.text-1 {
+      animation: blink 0.8s linear 0.9s, blink 0.8s linear 2s;
+      opacity: 0;
+}
+.text-2 {
+      animation: blink 0.8s linear 0.8s, blink 0.8s linear 2.1s;
+      opacity: 0;
+}
+.text-3 {
+      animation: blink 0.8s linear 0.7s, blink 0.8s linear 2.2s;
+      opacity: 0;
+}
+.text-4 {
+      animation: blink 0.8s linear 0.6s, blink 0.8s linear 2.3s;
+      opacity: 0;
+}
+.text-5 {
+      animation: blink 0.8s linear 0.5s, blink 0.8s linear 2.4s;
+      opacity: 0;
+}
+.text-6 {
+      animation: blink 0.8s linear 0.4s, blink 0.8s linear 2.5s, slide-out 1s linear 3.2s;
+      opacity: 0;
+}
+.text-7 {
+      animation: blink 0.8s linear 0.5s, blink 0.8s linear 2.4s;
+      opacity: 0;
+}
+.text-7 {
+      animation: blink 0.8s linear 0.5s, blink 0.8s linear 2.4s;
+      opacity: 0;
+}
+.text-8 {
+      animation: blink 0.8s linear 0.6s, blink 0.8s linear 2.3s;
+      opacity: 0;
+}
+.text-9 {
+      animation: blink 0.8s linear 0.7s, blink 0.8s linear 2.2s;
+      opacity: 0;
+}
+.text-10 {
+      animation: blink 0.8s linear 0.8s, blink 0.8s linear 2.1s;
+      opacity: 0;
+}
+.text-11 {
+      animation: blink 0.8s linear 0.9s, blink 0.8s linear 2s;
+      opacity: 0;
+}
+  
+@keyframes slide-out {
+      0% {
+          opacity: 0;
+      }
+      1% {
+          opacity: 100%;
+      }
+      19% {
+          opacity: 100%;
+      }
+      20% {
+          opacity: 0;
+      }
+      39% {
+          opacity: 0;
+      }
+      40% {
+          opacity: 100%;
+      }
+      59% {
+          opacity: 100%;
+      }
+      60% {
+          opacity: 0;
+      }
+      79% {
+          opacity: 0;
+      }
+      80% {
+          opacity: 100%;
+      }
+      100% {
+          opacity: 100%;
+      }
+}
+  
+@keyframes slide-out-container {
+      0% {
+          height: 100vh;
+      }
+      40% {
+          height: 100vh;
+      }
+      100% {
+          height: 0;
+      }
+}
+
+nav {
+      padding: 8px 100px 8px 100px;
+}
+
+.logo {
+      float: left;
+      padding: 8px;
+      margin-top: 8px;
+}
+
+.logo a {
+      color: #000;
+      font-family: "Exo";
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: 0px;
+      text-decoration: none;
+}
+
+nav ul {
+      display: flex;
+      justify-content: flex-end;
+}
+
+nav ul li {
+      display: inline-block;
+      /* float: left; */
+}
+
+nav ul li:not(:first-child) {
+      margin-left: 48px;
+}
+
+nav ul li:last-child {
+      margin-right: 24px;
+}
+
+nav ul li a {
+      display: inline-block;
+      outline: none;
+      color: #000;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-size: 14px;
+      letter-spacing: 1.2px;
+      font-weight: 600;
+}
+
+@media screen and (max-width: 864px) {
+      .logo {
+            padding: 0;
+      }
+
+      ul {
+            display: flex;
+            justify-content: flex-end;
+            flex-direction: column;
+      }
+
+      .nav-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: #fff;
+            opacity: 0;
+            transition: all 0.2s ease;
+      }
+
+      .nav-wrapper ul {
+            position: absolute;
+            top: 33%;
+            transform: translateY(-50%);
+            width: 100%;
+      }
+
+      .nav-wrapper ul li {
+            display: block;
+            float: none;
+            width: 100%;
+            text-align: right;
+            margin-bottom: 10px;
+      }
+
+      .nav-wrapper ul li:nth-child(1) a {
+            transition-delay: 0.2s;
+      }
+
+      .nav-wrapper ul li:nth-child(2) a {
+            transition-delay: 0.3s;
+      }
+
+      .nav-wrapper ul li:nth-child(3) a {
+            transition-delay: 0.4s;
+      }
+
+      .nav-wrapper ul li:nth-child(4) a {
+            transition-delay: 0.5s;
+      }
+
+      .nav-wrapper ul li:not(:first-child) {
+            margin-left: 0;
+      }
+
+      .nav-wrapper ul li a {
+            padding: 10px 24px;
+            opacity: 0;
+            color: #000;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            transform: translateX(-20px);
+            transition: all 0.2s ease;
+      }
+
+      .nav-btn {
+            position: fixed;
+            right: 10px;
+            top: 10px;
+            display: block;
+            width: 48px;
+            height: 48px;
+            cursor: pointer;
+            z-index: 9999;
+            border-radius: 50%;
+      }
+
+      .nav-btn i {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: #000;
+            border-radius: 2px;
+            margin-left: 14px;
+      }
+
+      .nav-btn i:nth-child(1) {
+            margin-top: 16px;
+      }
+
+      .nav-btn i:nth-child(2) {
+            margin-top: 4px;
+            opacity: 1;
+      }
+
+      .nav-btn i:nth-child(3) {
+            margin-top: 4px;
+      }
+
+      .tagline {
+            padding-left: 16px;
+      }
+
+      .logo{
+            padding: 8px;
+      }
+
+      .text {
+            font-family: "Montserrat";
+            font-weight: 600;
+            letter-spacing: 7px;
+            line-height: 45px;
+            text-transform: uppercase;
+            font-size: 25px;
+      }
+      nav {
+            padding: 8px 0px 8px 0px;
+      }
+      
+}
+
+#nav:checked + .nav-btn {
+      transform: rotate(45deg);
+}
+
+#nav:checked + .nav-btn i {
+      background: #000;
+      transition: transform 0.2s ease;
+}
+
+#nav:checked + .nav-btn i:nth-child(1) {
+      transform: translateY(6px) rotate(180deg);
+}
+
+#nav:checked + .nav-btn i:nth-child(2) {
+      opacity: 0;
+}
+
+#nav:checked + .nav-btn i:nth-child(3) {
+      transform: translateY(-6px) rotate(90deg);
+}
+
+#nav:checked ~ .nav-wrapper {
+      z-index: 9990;
+      opacity: 1;
+}
+
+#nav:checked ~ .nav-wrapper ul li a {
+      opacity: 1;
+      transform: translateX(0);
+}
+
+a.link-hover {
+      margin-top: 3.5px;
+      margin-right: 6px;
+      text-decoration: none;
+      color: #000000;
+      display: inline-block;
+      padding: 0 0 0 14px;
+      cursor:pointer;
+}
+  
+.link-hover::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: #000000;
+      transition: width .3s;
+}
+  
+.link-hover:hover::after {
+      width: 100%;
+      transition: width .3s;
+}
+
+.hidden {
+      display: none;
+}
+
+.tagline {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      height: 250px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.tag-style {
+      padding: 8px;
+      margin: 8px 0 0 16px;
+}
+
+.hover08 figure img {
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+.hover08 figure:hover img {
+	-webkit-filter: grayscale(0);
+	filter: grayscale(0);
+}
+
+.gall-area {
+      padding: 100px;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      flex-flow: column wrap;
+      align-content: center;
+
+}
+
+.gall-img img {
+      width: 100%;
+      height: auto;
+}
+
+.gallery {
+      padding: 30px;
+      margin: 0;
+
+      width: 25%;
+}
+
+img {
+      width: 300px;
+      height: 200px;
+}
+
